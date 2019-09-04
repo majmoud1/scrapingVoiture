@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='sonatel.gif') }}" /><title>Accueil</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Colo Shop Template">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/bootstrap4/bootstrap.min.css') }}">
+	<link href="{{ url_for('static', filename='plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet"
+		type="text/css">
+	<link rel="stylesheet" type="text/css"
+		href="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/owl.carousel.css') }}">
+	<link rel="stylesheet" type="text/css"
+		href="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/owl.theme.default.css') }}">
+	<link rel="stylesheet" type="text/css"
+		href="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/animate.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/main_styles.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/responsive.css') }}">
+
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+	<div class="super_container">
+
+		<!-- Header -->
+
+		<header class="header trans_300">
+
+			<!-- Top Navigation -->
+
+			<div class="top_nav">
+			</div>
+
+			<!-- Main Navigation -->
+
+			<div class="main_nav_container">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 text-right">
+							<div class="logo_container">
+								<a href="#">sonatel<span>academy</span></a>
+							</div>
+							<nav class="navbar">
+								<ul class="navbar_menu">
+									<li><a href="{{ url_for('index') }}">Accueil</a></li>
+									<li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+								</ul>
+								<div class="hamburger_container">
+									<i class="fa fa-bars" aria-hidden="true"></i>
+								</div>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</header>
+
+		<div class="fs_menu_overlay"></div>
+		<div class="hamburger_menu">
+			<div class="hamburger_close"><i class="fa fa-times" aria-hidden="true"></i></div>
+			<div class="hamburger_menu_content text-right">
+				<ul class="menu_top_nav">
+					<li class="menu_item"><a href="{{ url_for('index') }}">Accueil</a></li>
+					<li class="menu_item"><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Banner -->
+
+
+
+		<!-- New Arrivals -->
+
+		<div class="new_arrivals">
+			<div class="container">
+				<div class="row">
+					<div class="col text-center">
+						<div class="section_title new_arrivals_title">
+							<h2></h2>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="row align-items-center">
+			<div class="col text-center">
+				<div class="new_arrivals_sorting">
+					<div class="container">
+						<div class="row">
+							<div class="col-xs-12 ">
+								<nav>
+									<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+										<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+											aria-controls="nav-home" aria-selected="true"><strong>PRÉSENTATION</strong></a>
+										<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-about" role="tab"
+											aria-controls="nav-profile" aria-selected="false"><strong>RECHERCHE</strong></a>
+									</div>
+								</nav>
+								<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+									<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+										<!-- Et et consectetur ipsum labore excepteur est proident excepteur ad velit
+										occaecat
+										qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur
+										veniam
+										sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure
+										incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet
+										duis do
+										nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui
+										sit.
+										Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do
+										dolore.
+										Duis reprehenderit occaecat anim ullamco ad duis occaecat ex. -->
+									</div>
+									<div class="tab-pane fade show active" id="nav-about" role="tabpanel" aria-labelledby="nav-home-tab">
+										<!-- <form id="booking-form" class="booking-form" method="POST">
+
+											<div class="form-group">
+												<div class="form-destination">
+													<label for="destination">Destination</label>
+													<input type="text" id="destination" name="destination" placeholder="EG. HAWAII" />
+												</div>
+												<div class="form-date-from form-icon">
+													<label for="date_from">From</label>
+													<input type="text" id="date_from" class="date_from" placeholder="Pick a date" />
+													<span class="icon"><i class="zmdi zmdi-calendar-alt"></i></span> 
+												</div>
+												<div class="form-date-to form-icon">
+													<label for="date_to">To</label>
+													<input type="text" id="date_to" class="date_to" placeholder="Pick a date" />
+													<span class="icon"><i class="zmdi zmdi-calendar-alt"></i></span> 
+												</div>
+												<div class="form-quantity">
+													<label for="quantity">Quantity</label>
+													<span class="modify-qty plus" onClick="Tang()"><i class="zmdi zmdi-chevron-up"></i></span>
+													<input type="number" name="quantity" id="quantity" value="0" min="0"
+														class="nput-text qty text">
+													<span class="modify-qty minus" onClick="Giam()"><i class="zmdi zmdi-chevron-down"></i></span>
+												</div>
+												<div class="form-submit">
+													<input type="submit" id="submit" class="submit" value="Book now" />
+												</div>
+											</div>
+										</form> -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
+
+
+
+					<!-- Produits -->
+
+					{% for voiture in voitures %}
+					<div class="product-item accessories">
+						<div class="product product_filter">
+							<div class="product_image">
+								<img src="{{ voiture[9] }}" height="220px" alt="">
+							</div>
+							<div class="favorite"></div>
+							<div class="product_info">
+								<h6 class="product_name"><a href="{{ voiture[10] }}" target="_blank">{{ voiture[1] }} {{ voiture[2] }}</a></h6>
+								<div>Transmission : {{ voiture[3] }}</div>
+								<div>Carburant : {{ voiture[4] }}</div>
+								<div>Kilométrage : {{ voiture[5] }} km</div>
+								<div class="product_price">{{ voiture[7] }} FCFA</div>
+							</div>
+						</div>
+						<div class="red_button add_to_cart_button"><a href="{{ voiture[10] }}" target="_blank">Consulter</a></div>
+						
+					</div>
+					
+					{% endfor %}
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+
+
+	<!-- Footer -->
+
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div
+						class="footer_nav_container d-flex flex-sm-row flex-column align-items-center justify-content-lg-start justify-content-center text-center">
+						<ul class="footer_nav">
+							<li><a href="#">Blog</a></li>
+							<li><a href="#">FAQs</a></li>
+							<li><a href="contact.html">Contact us</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="footer_social d-flex flex-row align-items-center justify-content-lg-end justify-content-center">
+						<ul>
+							<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="footer_nav_container">
+						<div class="cr">©2018 Tous droits réservés. Sonatel Academy - Data Artisan <i class="fa fa-heart-o"
+								aria-hidden="true"></i> Présenté Par <a href="#">Majmoud DIOP</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	</div>
+
+	<script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='styles/bootstrap4/popper.js') }}"></script>
+	<script src="{{ url_for('static', filename='styles/bootstrap4/bootstrap.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='plugins/Isotope/isotope.pkgd.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/owl.carousel.js') }}"></script>
+	<script src="{{ url_for('static', filename='plugins/easing/easing.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+</body>
+
+</html>

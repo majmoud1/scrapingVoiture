@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='sonatel.gif') }}" />
+	<title>Accueil</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Colo Shop Template">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css"
+		href="{{ url_for('static', filename='styles/bootstrap4/bootstrap.min.css') }}">
+	<link href="{{ url_for('static', filename='plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}"
+		rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css"
+		href="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/owl.carousel.css') }}">
+	<link rel="stylesheet" type="text/css"
+		href="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/owl.theme.default.css') }}">
+	<link rel="stylesheet" type="text/css"
+		href="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/animate.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/main_styles.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/responsive.css') }}">
+
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+	<script src="https://cdnjs.com/libraries/Chart.js"></script>
+</head>
+
+<body>
+
+	<div class="super_container">
+
+		<!-- Header -->
+
+		<header class="header trans_300">
+
+			<!-- Top Navigation -->
+
+			<div class="top_nav">
+			</div>
+
+			<!-- Main Navigation -->
+
+			<div class="main_nav_container">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 text-right">
+							<div class="logo_container">
+								<a href="#">sonatel<span>academy</span></a>
+							</div>
+							<nav class="navbar">
+								<ul class="navbar_menu">
+									<li><a href="{{ url_for('index') }}">Accueil</a></li>
+									<li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+								</ul>
+								<div class="hamburger_container">
+									<i class="fa fa-bars" aria-hidden="true"></i>
+								</div>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</header>
+
+		<div class="fs_menu_overlay"></div>
+		<div class="hamburger_menu">
+			<div class="hamburger_close"><i class="fa fa-times" aria-hidden="true"></i></div>
+			<div class="hamburger_menu_content text-right">
+				<ul class="menu_top_nav">
+					<li class="menu_item"><a href="{{ url_for('index') }}">Accueil</a></li>
+					<li class="menu_item"><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Banner -->
+
+
+
+		<!-- New Arrivals -->
+
+		<!-- <div class="container" style="padding-top: 200px"> -->
+		<div class="row" style="height: 800px; padding-top: 180px">
+			<div class="col-md-6 left">
+				<canvas id="diagramme1"></canvas>
+				<script>
+					var ctx = document.getElementById('diagramme1').getContext('2d');
+					var a = {{ nbrVoitureParAnnee[1] }};
+					var mois = ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007',
+						'2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019'];
+					var smartphones = a;
+					var chart = new Chart(ctx, {
+						// The type of chart we want to create
+						type: 'line',
+
+						// The data for our dataset
+						data: {
+							labels: mois,
+							datasets: [{
+								label: "Nombre de voiture par année",
+								backgroundColor: 'rgb(255, 99, 132)',
+								borderColor: 'rgb(255, 99, 132)',
+								data: smartphones
+							}]
+						},
+
+						// Configuration options go here
+						options: {}
+					});
+				</script>
+
+			</div>
+
+			<div class="col-md-6 right">
+				<canvas id="diagramme2"></canvas>
+				<script>
+					var a = {{ typesVoitures[1] }};
+					var data = {
+						datasets: [{
+							data: a,
+							backgroundColor: ['#AFFF33', '#FA1927', '#19C7FA', '#0E4FD3', '#9E9194', '#1ADBA6', '#B7D2DF', '#06E81E']
+						}],
+						labels: [
+							'BMW',
+							'MITSUBISHI',
+							'FORD FOCUS ECO',
+							'HYUNDAI',
+							'FORD',
+							'NISSAN',
+							'PEUGEOT',
+							'RENAULT'
+						]
+					};
+					var ctx = document.getElementById('diagramme2').getContext('2d');
+					var myPieChart = new Chart(ctx, {
+						type: 'doughnut',
+						data: data
+					});	
+				</script>
+			</div>
+
+			<div class="col-md-6 right">
+				<canvas id="diagramme3"></canvas>
+				<script>
+					var a = {{ typesVoitures[1] }};
+					var data = {
+						datasets: [{
+							data: a,
+							backgroundColor: ['#AFFF33', '#FA1927', '#19C7FA', '#0E4FD3', '#9E9194', '#1ADBA6', '#B7D2DF', '#06E81E']
+						}],
+						labels: [
+							'BMW',
+							'MITSUBISHI',
+							'FORD FOCUS ECO',
+							'HYUNDAI',
+							'FORD',
+							'NISSAN',
+							'PEUGEOT',
+							'RENAULT'
+						]
+					};
+					var ctx = document.getElementById('diagramme3').getContext('2d');
+					var myPieChart = new Chart(ctx, {
+						type: 'horizontalBar',
+						data: data
+					});	
+				</script>
+			</div>
+
+			<div class="col-md-6 left">
+				<canvas id="diagramme4"></canvas>
+				<script>
+					var ctx = document.getElementById('diagramme4').getContext('2d');
+					var a = {{ typesVoitures[1] }};
+					var myBarChart = new Chart(ctx, {
+						type: 'bar',
+						data: {
+							labels: [
+								'BMW',
+								'MITSUBISHI',
+								'FORD FOCUS ECO',
+								'HYUNDAI',
+								'FORD',
+								'NISSAN',
+								'PEUGEOT',
+								'RENAULT'
+							],
+							datasets: [{
+								label: "NOMBRE DE VOITURE PAR ANNÉE",
+								backgroundColor: ['#AFFF33', '#FA1927', '#19C7FA', '#0E4FD3', '#9E9194', '#1ADBA6', '#B7D2DF', '#06E81E'],
+								borderColor: 'rgb(0, 99, 132)',
+								data: a
+							}]
+						}
+					});
+				</script>
+			</div>
+
+			
+
+		</div>
+
+
+
+		<!-- Footer -->
+
+		<footer class="footer">
+			<div class="container">
+				<div class="row">
+					<div style="padding: 50px;"></div>
+						<div class="col-md-12">
+								<canvas id="diagramme5"></canvas>
+								<script>
+									var ctx = document.getElementById('diagramme5').getContext('2d');
+									var a = {{ typeModeles[1] }};
+									var myBarChart = new Chart(ctx, {
+										type: 'bar',
+										data: {
+											labels: ['PAJERO', 'ELANTRA', 'FUSION', 'VOLESTER', 'LAGUNA', '308', 'ALMERA', 'TUCSON', 'X6', 'FORD FOCUS BREAK', 'CLIO', 'FOCUS', 'EDGE', '207 BRECK', 'FIESTA', '405', 'IX35'],
+											datasets: [{
+												label: ["NOMBRE DE VOITURE PAR MODÈLE"],
+												backgroundColor: ['#AFFF33', '#FA1927', '#19C7FA', '#0E4FD3', '#9E9194', '#1ADBA6',
+												 '#B7D2DF', '#06E81E', '#33E6FF', '#F3FF33', '#7B8209', '#0C93BF', '#BF6B0C', '#00FF2A',
+												 '#C0EC0E', '#2404D9', '#E1AA0C', '#9E6255'],
+												borderColor: 'rgb(0, 99, 132)',
+												data: a
+											}]
+										}
+									});
+								</script>
+							</div>
+					<div class="col-lg-6">
+						<div
+							class="footer_nav_container d-flex flex-sm-row flex-column align-items-center justify-content-lg-start justify-content-center text-center">
+							<ul class="footer_nav">
+								<li><a href="#">Blog</a></li>
+								<li><a href="#">FAQs</a></li>
+								<li><a href="contact.html">Contact us</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div
+							class="footer_social d-flex flex-row align-items-center justify-content-lg-end justify-content-center">
+							<ul>
+								<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="footer_nav_container">
+							<div class="cr">©2018 Tous droits réservés. Sonatel Academy - Data Artisan <i
+									class="fa fa-heart-o" aria-hidden="true"></i> Présenté Par <a href="#">Majmoud
+									DIOP</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+
+	<script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='styles/bootstrap4/popper.js') }}"></script>
+	<script src="{{ url_for('static', filename='styles/bootstrap4/bootstrap.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='plugins/Isotope/isotope.pkgd.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/owl.carousel.js') }}"></script>
+	<script src="{{ url_for('static', filename='plugins/easing/easing.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+</body>
+
+</html>
